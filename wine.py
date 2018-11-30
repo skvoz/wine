@@ -20,6 +20,11 @@ X_train, X_test, y_train, y_test = train(X, y, test_size=0.6)
 from sklearn.ensemble import RandomForestClassifier
 
 from sklearn.preprocessing import scale
+
+print(X_train)
+print(X_train[::, 0:2])
+
+
 X_train_draw = scale(X_train[::, 0:2])
 X_test_draw = scale(X_test[::, 0:2])
 
@@ -54,3 +59,4 @@ plt.ylim(yy.min(), yy.max())
 
 plt.title("Score: %.0f percents" % (clf.score(X_test_draw, y_test) * 100))
 plt.show()
+
